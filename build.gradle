@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'fabric-loom' version '1.9.2'
+}
+
+group = "com.joavictor.alchols"
+version = "1.0.0"
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+loom {
+    splitEnvironmentSourceSets()
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://maven.fabricmc.net/" }
+    maven { url "https://api.modrinth.com/maven" }
+    maven { url "https://maven.terraformersmc.com/releases/" }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.8"
+
+    mappings loom.layered {
+        officialMojangMappings()
+    }
+
+    modImplementation "net.fabricmc:fabric-loader:0.17.3"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.116.0+1.21.4"
+
+    
+    modImplementation "com.terraformersmc:modmenu:11.0.2"
+
+    
+    modImplementation "maven.modrinth:cloth-config:14.0.126+fabric"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "alchols",
+  "version": "1.0.0",
+  "name": "Alchols",
+  "description": "Mod de otimização (Alchols) — permite ajustar threads e RAM.",
+  "authors": [
+    "João Victor"
+  ],
+  "license": "MIT",
+
+  "entrypoints": {
+  "main": [
+    "com.joavictor.alchols.OptMod"
+  ],
+  "client": [
+    "com.joavictor.alchols.AlcholsClient"
+  ],
+  "modmenu": [
+    "com.joavictor.alchols.ui.AlcholsModMenu"
+  ]
+},
+
+  "depends": {
+    "fabricloader": ">=0.17.3",
+    "fabric-api": "*",
+    "modmenu": "*",
+    "cloth-config2": "*"
+  }
+}
